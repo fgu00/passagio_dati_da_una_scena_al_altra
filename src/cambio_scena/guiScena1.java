@@ -5,11 +5,15 @@
  */
 package cambio_scena;
 
+import static cambio_scena.Cambio_scena.login;
+import static cambio_scena.Cambio_scena.password;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -18,12 +22,15 @@ import javafx.stage.Stage;
  * @author russo.salvatore
  */
 public class guiScena1 {
+    private Scanner sc=new Scanner(System.in);
     private Stage s;
     private Scene scena;
     private Scene scena2;
     private HBox h;
-     private  Label l;
-      private Button btn ;
+    private  Label l;
+    private Button btn;
+    private  TextField lo;
+    private  TextField pa;
     public guiScena1(Stage s){
      this.s=s;
      gui();
@@ -31,20 +38,34 @@ public class guiScena1 {
     public void gui(){
          h=new HBox();
          l=new Label("scena 1");
-           btn = new Button();
+         lo=new TextField();
+         pa=new TextField();
+         login=lo.getText();
+         password=pa.getText();
+        btn = new Button();
         btn.setText("va alla scena due");
         btn.setOnMouseClicked((value->{
             //imposto la nuova scena
+            
            s.setScene(scena2);
            //mostro la scena imposta
            s.show();
         }));
-          h.getChildren().addAll(l,btn);
-        scena =new Scene(h, 300, 250);  
+          h.getChildren().addAll(l,btn,lo,pa);
+        scena =new Scene(h, 500, 200);  
     }
     public Scene getScena(){
         return scena;    
     }
+
+    public String getLo() {
+        return login;
+    }
+
+    public String getPa() {
+        return password;
+    }
+    
     public void setScena2(Scene scena2){
         this.scena2=scena2;
     }

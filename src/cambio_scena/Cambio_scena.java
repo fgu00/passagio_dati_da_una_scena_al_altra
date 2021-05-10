@@ -18,6 +18,8 @@ import javafx.stage.Stage;
  * @author russo.salvatore
  */
 public class Cambio_scena extends Application {
+    public static String login="";
+     public static String password="";
     private guiScena1 scena1;
     private guiScena2 scena2;
     @Override

@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 public class Cambio_scena extends Application {
     public static String login="";
      public static String password="";
-    private guiScena1 scena1;
-    private guiScena2 scena2;
+    public static guiScena1 scena1;
+    public static guiScena2 scena2;
     @Override
     public void start(Stage primaryStage) {
 //        Button btn = new Button();

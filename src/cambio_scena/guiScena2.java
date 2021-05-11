@@ -19,22 +19,24 @@ import javafx.stage.Stage;
  */
 public class guiScena2 {
   private Stage s;
-    private Scene scena;
-    private Scene scena2;
-     private HBox h;
-     private  Label l;
-      private Button btn ;
-      private Label pa;
-      private Label lo;
-    public guiScena2(Stage s){
+  private Scene scena;
+  private Scene scena2;
+  private HBox h;
+  private  Label l;
+  private Button btn ;
+  private Label pas;
+  private Label lo;
+  private Label nul;
+  public guiScena2(Stage s){
      this.s=s;
      gui();
     }
     public void gui(){
          h=new HBox();
          l=new Label("scena 2");
-         pa=new Label(password+"gvvg");
-         lo=new Label(login+"vbv");
+         pas=new Label(password);
+         lo=new Label(login);
+         nul=new Label("        ");
            btn = new Button();
         btn.setText("va alla scena uno");
         btn.setOnMouseClicked((value->{
@@ -43,7 +45,7 @@ public class guiScena2 {
            //mostro la scena imposta
            s.show();
         }));
-        h.getChildren().addAll(l,btn,pa,lo);
+        h.getChildren().addAll(l,btn,lo,nul,pas);
         scena =new Scene(h, 500, 200);  
     }
     public Scene getScena(){
@@ -56,7 +58,7 @@ public class guiScena2 {
       lo.setText(login);  
     }
     public void getPassword(String password){
-        pa.setText(password); 
+        pas.setText(password); 
     }
 }   
 
